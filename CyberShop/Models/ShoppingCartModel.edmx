@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MINIPROJECT_174772Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Categories_174772">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Customers_174772">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="varchar" MaxLength="50" />
+          <Property Name="EmailId" Type="varchar" MaxLength="30" />
+          <Property Name="Password" Type="varchar" MaxLength="20" />
+          <Property Name="DeliveryAddress" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="OrderDetails_174772">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="UnitCost" Type="int" />
+        </EntityType>
+        <EntityType Name="Orders_174772">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="CustomerId" Type="int" />
+          <Property Name="OrderDate" Type="datetime" />
+          <Property Name="ShipDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Products_174772">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="ModelNumber" Type="varchar" MaxLength="50" />
+          <Property Name="ModelName" Type="varchar" MaxLength="50" />
+          <Property Name="UnitCost" Type="int" />
+          <Property Name="Description" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="ShoppingCart_174772">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="int" Nullable="false" />
+          <Property Name="CartId" Type="int" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="DateCreated" Type="datetime" />
+        </EntityType>
+        <Association Name="FK__OrderDeta__Produ__403A8C7D">
+          <End Role="Products_174772" Type="Self.Products_174772" Multiplicity="0..1" />
+          <End Role="OrderDetails_174772" Type="Self.OrderDetails_174772" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products_174772">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="OrderDetails_174772">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders_17__Custo__49C3F6B7">
+          <End Role="Customers_174772" Type="Self.Customers_174772" Multiplicity="0..1" />
+          <End Role="Orders_174772" Type="Self.Orders_174772" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers_174772">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Orders_174772">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Products___Categ__3A81B327">
+          <End Role="Categories_174772" Type="Self.Categories_174772" Multiplicity="0..1" />
+          <End Role="Products_174772" Type="Self.Products_174772" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories_174772">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Products_174772">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ShoppingC__Produ__4316F928">
+          <End Role="Products_174772" Type="Self.Products_174772" Multiplicity="0..1" />
+          <End Role="ShoppingCart_174772" Type="Self.ShoppingCart_174772" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products_174772">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ShoppingCart_174772">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="SearchProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ModelName" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="MINIPROJECT_174772ModelStoreContainer">
+          <EntitySet Name="Categories_174772" EntityType="Self.Categories_174772" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customers_174772" EntityType="Self.Customers_174772" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderDetails_174772" EntityType="Self.OrderDetails_174772" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders_174772" EntityType="Self.Orders_174772" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products_174772" EntityType="Self.Products_174772" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShoppingCart_174772" EntityType="Self.ShoppingCart_174772" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__OrderDeta__Produ__403A8C7D" Association="Self.FK__OrderDeta__Produ__403A8C7D">
+            <End Role="Products_174772" EntitySet="Products_174772" />
+            <End Role="OrderDetails_174772" EntitySet="OrderDetails_174772" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders_17__Custo__49C3F6B7" Association="Self.FK__Orders_17__Custo__49C3F6B7">
+            <End Role="Customers_174772" EntitySet="Customers_174772" />
+            <End Role="Orders_174772" EntitySet="Orders_174772" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Products___Categ__3A81B327" Association="Self.FK__Products___Categ__3A81B327">
+            <End Role="Categories_174772" EntitySet="Categories_174772" />
+            <End Role="Products_174772" EntitySet="Products_174772" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ShoppingC__Produ__4316F928" Association="Self.FK__ShoppingC__Produ__4316F928">
+            <End Role="Products_174772" EntitySet="Products_174772" />
+            <End Role="ShoppingCart_174772" EntitySet="ShoppingCart_174772" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MINIPROJECT_174772Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Categories_174772">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+          <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Products_174772" Relationship="Self.FK__Products___Categ__3A81B327" FromRole="Categories_174772" ToRole="Products_174772" />
+        </EntityType>
+        <EntityType Name="Customers_174772">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmailId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DeliveryAddress" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Orders_174772" Relationship="Self.FK__Orders_17__Custo__3D5E1FD2" FromRole="Customers_174772" ToRole="Orders_174772" />
+        </EntityType>
+        <EntityType Name="OrderDetails_174772">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="UnitCost" Type="Int32" />
+          <NavigationProperty Name="Products_174772" Relationship="Self.FK__OrderDeta__Produ__403A8C7D" FromRole="OrderDetails_174772" ToRole="Products_174772" />
+        </EntityType>
+        <EntityType Name="Orders_174772">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerId" Type="Int32" />
+          <Property Name="OrderDate" Type="DateTime" Precision="3" />
+          <Property Name="ShipDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Customers_174772" Relationship="Self.FK__Orders_17__Custo__3D5E1FD2" FromRole="Orders_174772" ToRole="Customers_174772" />
+        </EntityType>
+        <EntityType Name="Products_174772">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="ModelNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModelName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UnitCost" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Categories_174772" Relationship="Self.FK__Products___Categ__3A81B327" FromRole="Products_174772" ToRole="Categories_174772" />
+          <NavigationProperty Name="OrderDetails_174772" Relationship="Self.FK__OrderDeta__Produ__403A8C7D" FromRole="Products_174772" ToRole="OrderDetails_174772" />
+          <NavigationProperty Name="ShoppingCart_174772" Relationship="Self.FK__ShoppingC__Produ__4316F928" FromRole="Products_174772" ToRole="ShoppingCart_174772" />
+        </EntityType>
+        <EntityType Name="ShoppingCart_174772">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="Int32" Nullable="false" />
+          <Property Name="CartId" Type="Int32" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="ProductId" Type="Int32" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Products_174772" Relationship="Self.FK__ShoppingC__Produ__4316F928" FromRole="ShoppingCart_174772" ToRole="Products_174772" />
+        </EntityType>
+        <Association Name="FK__Products___Categ__3A81B327">
+          <End Role="Categories_174772" Type="Self.Categories_174772" Multiplicity="0..1" />
+          <End Role="Products_174772" Type="Self.Products_174772" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories_174772">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Products_174772">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders_17__Custo__3D5E1FD2">
+          <End Role="Customers_174772" Type="Self.Customers_174772" Multiplicity="0..1" />
+          <End Role="Orders_174772" Type="Self.Orders_174772" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers_174772">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Orders_174772">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderDeta__Produ__403A8C7D">
+          <End Role="Products_174772" Type="Self.Products_174772" Multiplicity="0..1" />
+          <End Role="OrderDetails_174772" Type="Self.OrderDetails_174772" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products_174772">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="OrderDetails_174772">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ShoppingC__Produ__4316F928">
+          <End Role="Products_174772" Type="Self.Products_174772" Multiplicity="0..1" />
+          <End Role="ShoppingCart_174772" Type="Self.ShoppingCart_174772" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products_174772">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ShoppingCart_174772">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MINIPROJECT_174772Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories_174772" EntityType="Self.Categories_174772" />
+          <EntitySet Name="Customers_174772" EntityType="Self.Customers_174772" />
+          <EntitySet Name="OrderDetails_174772" EntityType="Self.OrderDetails_174772" />
+          <EntitySet Name="Orders_174772" EntityType="Self.Orders_174772" />
+          <EntitySet Name="Products_174772" EntityType="Self.Products_174772" />
+          <EntitySet Name="ShoppingCart_174772" EntityType="Self.ShoppingCart_174772" />
+          <AssociationSet Name="FK__Products___Categ__3A81B327" Association="Self.FK__Products___Categ__3A81B327">
+            <End Role="Categories_174772" EntitySet="Categories_174772" />
+            <End Role="Products_174772" EntitySet="Products_174772" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders_17__Custo__3D5E1FD2" Association="Self.FK__Orders_17__Custo__3D5E1FD2">
+            <End Role="Customers_174772" EntitySet="Customers_174772" />
+            <End Role="Orders_174772" EntitySet="Orders_174772" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderDeta__Produ__403A8C7D" Association="Self.FK__OrderDeta__Produ__403A8C7D">
+            <End Role="Products_174772" EntitySet="Products_174772" />
+            <End Role="OrderDetails_174772" EntitySet="OrderDetails_174772" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ShoppingC__Produ__4316F928" Association="Self.FK__ShoppingC__Produ__4316F928">
+            <End Role="Products_174772" EntitySet="Products_174772" />
+            <End Role="ShoppingCart_174772" EntitySet="ShoppingCart_174772" />
+          </AssociationSet>
+          <FunctionImport Name="SearchProduct" ReturnType="Collection(MINIPROJECT_174772Model.SearchProduct_Result)">
+          <Parameter Name="ModelName" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="SearchProduct_Result">
+          <Property Type="Int32" Name="ProductId" Nullable="false" />
+          <Property Type="Int32" Name="CategoryId" Nullable="true" />
+          <Property Type="String" Name="ModelNumber" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ModelName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="UnitCost" Nullable="true" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="200" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MINIPROJECT_174772ModelStoreContainer" CdmEntityContainer="MINIPROJECT_174772Entities">
+          <EntitySetMapping Name="Categories_174772">
+            <EntityTypeMapping TypeName="MINIPROJECT_174772Model.Categories_174772">
+              <MappingFragment StoreEntitySet="Categories_174772">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers_174772">
+            <EntityTypeMapping TypeName="MINIPROJECT_174772Model.Customers_174772">
+              <MappingFragment StoreEntitySet="Customers_174772">
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="DeliveryAddress" ColumnName="DeliveryAddress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetails_174772">
+            <EntityTypeMapping TypeName="MINIPROJECT_174772Model.OrderDetails_174772">
+              <MappingFragment StoreEntitySet="OrderDetails_174772">
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders_174772">
+            <EntityTypeMapping TypeName="MINIPROJECT_174772Model.Orders_174772">
+              <MappingFragment StoreEntitySet="Orders_174772">
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="ShipDate" ColumnName="ShipDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products_174772">
+            <EntityTypeMapping TypeName="MINIPROJECT_174772Model.Products_174772">
+              <MappingFragment StoreEntitySet="Products_174772">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="ModelNumber" ColumnName="ModelNumber" />
+                <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+                <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShoppingCart_174772">
+            <EntityTypeMapping TypeName="MINIPROJECT_174772Model.ShoppingCart_174772">
+              <MappingFragment StoreEntitySet="ShoppingCart_174772">
+                <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+                <ScalarProperty Name="CartId" ColumnName="CartId" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SearchProduct" FunctionName="MINIPROJECT_174772Model.Store.SearchProduct">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MINIPROJECT_174772Model.SearchProduct_Result">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="ModelNumber" ColumnName="ModelNumber" />
+                <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+                <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

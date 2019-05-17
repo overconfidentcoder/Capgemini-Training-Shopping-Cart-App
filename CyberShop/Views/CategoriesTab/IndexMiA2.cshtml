@@ -1,0 +1,204 @@
+﻿@model IEnumerable<CyberShop.Models.Products_174772>
+
+@{
+    ViewBag.Title = "IndexMiA2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>Product</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Search Products*@
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="single-sidebar">
+                    <h2 class="sidebar-title">Search Products</h2>
+                    <form action="">
+                        <input type="text" placeholder="Search products...">
+                        <input type="submit" value="Search">
+                    </form>
+                </div>
+
+
+                @*Path of the page*@
+
+                <div class="col-md-8">
+                    <div class="product-content-right">
+                        <div class="product-breadcroumb">
+                            <a href="">Home</a>
+                            <a href="~/CategoriesTab/Index">Categories</a>
+                            <a href="~/CategoriesTab/IndexElectronics">Electronics</a>
+                            <a href="~/CategoriesTab/IndexMiA2">MiA2</a>
+
+                        </div>
+
+                        @*Main image*@
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="product-images">
+                                    <div class="product-main-img">
+                                        <img src="~/img/products/mia2.jpg" alt="">
+                                    </div>
+
+                                    @*Thumbnails*@
+
+                                    <div class="product-gallery">
+                                        <img src="~/img/products/thumbnails/mia2thumbnail1.jpg" alt="">
+                                        <img src="~/img/products/thumbnails/mia2thumbnail2.jpg" alt="">
+                                        <img src="~/img/products/thumbnails/mia2thumbnail3.jpg" alt="">
+                                        <img src="~/img/products/thumbnails/mia2thumbnail4.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            @*The Product*@
+
+                            <div class="col-sm-6">
+                                <div class="product-inner">
+                                    <h2 class="product-name">Mi A2</h2>
+                                    <div class="product-inner-price">
+                                        <ins>₹ 11000</ins> <del>₹ 15999</del>
+                                    </div>
+
+                                    <form action="" class="cart">
+                                        <div class="quantity">
+                                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
+                                        </div>
+                                        <button class="add_to_cart_button" type="submit">Add to cart</button>
+                                    </form>
+
+                                    <div role="tabpanel">
+                                        <ul class="product-tab" role="tablist">
+                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
+
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane fade in active" id="home">
+                                                <h2>Product Description</h2>
+                                                <p>Qualcomm Snapdragon 660, 2.2 GHz processor. 3010mAh battery capacity. 15.91 cm (5.99") FHD+ Display. Stock Android Oreo 8.1. 12 MP + 20 MP dual rear camera with portrait mode PDAF, HDR, dual flash. 20 MP front camera with portrait mode, flash light. Proximity sensor, E compass, Gyroscope, Accelerometer, IR Blaster.</p>
+
+                                                <p>Android v8.1 Oreo operating system with 2.2GHz Qualcomm Snapdragon 660 octa core processor, Adreno 512 GPU.3010mAH lithium-ion battery.Memory, Storage & SIM: 4GB RAM | 64GB storage | Dual nano SIM with dual standby (4G+4G).12MP+20MP dual rear camera and 20MP front facing camera.</p>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        @*Related Products*@
+
+                        <div class="related-products-wrapper">
+                            <h2 class="related-products-title">Related Products</h2>
+                            <div class="related-products-carousel">
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="~/img/products/galaxys10.jpg" alt="">
+                                        <div class="product-hover">
+                                            <a href="~/ShoppingCart/AddCart" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <a href="~/CategoriesTab/IndexSamsungGalaxy" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        </div>
+                                    </div>
+
+                                    <h2><a href="~/Views/CategoriesTab/IndexSamsungGalaxy.cshtml">Samsung Galaxy S10</a></h2>
+
+                                    <div class="product-carousel-price">
+                                        <ins>₹ 50000</ins> <del>₹ 66900</del>
+                                    </div>
+                                </div>
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="~/img/products/Converse.jpg" alt="">
+                                        <div class="product-hover">
+                                            <a href="~/ShoppingCart/AddCart" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <a href="~/CategoriesTab/IndexConverse" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        </div>
+                                    </div>
+
+                                    <h2><a href="~/CategoriesTab/IndexConverse">Converse Unisex Sneakers</a></h2>
+                                    <div class="product-carousel-price">
+                                        <ins>₹ 3000</ins> <del>₹ 4549</del>
+                                    </div>
+                                </div>
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="~/img/products/halfgf.jpg" alt="">
+                                        <div class="product-hover">
+                                            <a href="~/ShoppingCart/AddCart" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <a href="~/CategoriesTab/IndexHalfgf" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        </div>
+                                    </div>
+
+                                    <h2><a href="~/CategoriesTab/IndexHalfgf">Half GirlFriend</a></h2>
+
+                                    <div class="product-carousel-price">
+                                        <ins>₹ 30</ins> <del>₹ 50</del>
+                                    </div>
+                                </div>
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="~/img/products/piccasso.jpg" alt="">
+                                        <div class="product-hover">
+                                            <a href="~/ShoppingCart/AddCart" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <a href="~/CategoriesTab/IndexPiccasso" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        </div>
+                                    </div>
+
+                                    <h2><a href="~/CategoriesTab/IndexPiccasso">Picasso</a></h2>
+
+                                    <div class="product-carousel-price">
+                                        <ins>₹ 50000</ins> <del>₹ 100000</del>
+                                    </div>
+                                </div>
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="~/img/products/harrypotter.jpg" alt="">
+                                        <div class="product-hover">
+                                            <a href="~/ShoppingCart/AddCart" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <a href="~/CategoriesTab/IndexHarryPotter" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        </div>
+                                    </div>
+
+                                    <h2><a href="~/CategoriesTab/IndexHarryPotter">Harry Potter Set</a></h2>
+
+                                    <div class="product-carousel-price">
+                                        <ins>₹ 3000</ins> <del> ₹ 7000</del>
+                                    </div>
+                                </div>
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="~/img/products/sofaset.jpg" alt="">
+                                        <div class="product-hover">
+                                            <a href="~/ShoppingCart/AddCart" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <a href="~/CategoriesTab/IndexSofaSet" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        </div>
+                                    </div>
+
+                                    <h2><a href="~/CategoriesTab/IndexSofaSet">Convertible Sofa Set</a></h2>
+
+                                    <div class="product-carousel-price">
+                                        <ins>₹ 30000</ins> <del> ₹ 40000</del>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

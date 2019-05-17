@@ -1,0 +1,211 @@
+﻿@model IEnumerable<CyberShop.Models.Products_174772>
+
+@{
+    ViewBag.Title = "IndexSofaSet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>Product</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Search Products*@
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="single-sidebar">
+                    <h2 class="sidebar-title">Search Products</h2>
+                    <form action="">
+                        <input type="text" placeholder="Search products...">
+                        <input type="submit" value="Search">
+                    </form>
+                </div>
+
+
+                @*Path of the page*@
+
+                <div class="col-md-8">
+                    <div class="product-content-right">
+                        <div class="product-breadcroumb">
+                            <a href="">Home</a>
+                            <a href="~/CategoriesTab/Index">Categories</a>
+                            <a href="~/CategoriesTab/IndexFurniture">Furniture</a>
+                            <a href="~/CategoriesTab/IndexSofaSet">Convertible Sofa Set</a>
+
+                        </div>
+
+                        @*Main image*@
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="product-images">
+                                    <div class="product-main-img">
+                                        <img src="~/img/products/sofaset.jpg" alt="">
+                                    </div>
+
+                                    @*Thumbnails*@
+
+                                    <div class="product-gallery">
+                                        <img src="~/img/products/thumbnails/sofasetthumbnail1.jpg" alt="">
+                                        <img src="~/img/products/thumbnails/sofasetthumbnail2.jpg" alt="">
+                                        <img src="~/img/products/thumbnails/sofasetthumbnail3.jpg" alt="">
+                                        <img src="~/img/products/thumbnails/sofasetthumbnail4.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            @*The Product*@
+
+                            <div class="col-sm-6">
+                                <div class="product-inner">
+                                    <h2 class="product-name">Convertible Sofa Set</h2>
+                                    <div class="product-inner-price">
+                                        <ins>₹ 30000</ins> <del>₹ 40000</del>
+                                    </div>
+
+                                    <form action="" class="cart">
+                                        <div class="quantity">
+                                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
+                                        </div>
+                                        <button class="add_to_cart_button" type="submit">Add to cart</button>
+                                    </form>
+
+                                    <div role="tabpanel">
+                                        <ul class="product-tab" role="tablist">
+                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
+
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane fade in active" id="home">
+                                                <h2>Product Description</h2>
+                                                <p>
+                                                    This modern sleeper sofa features a classy mid century design. Our mid century modern sleeper sofa comes wrapped in carefully selected durable bonded leather upholstery. it comes equipped with a beautiful tufted design and nailhead trim to create the perfect sophisticated yet traditional style unlike any other. The modern mid century sleeper sofa adds an extra element of style and comfort to your living room and will be sure to impress your friends. This black modern sleeper sofa also features wooden legs to truly complete the look. Specifically designed to withstand extended periods of use. Curbside Delivery.
+
+                                                </p>
+
+                                                <p>
+                                                    Extra strong bonded leather upholstery prevents rips and tears,Dimensions: 82"L x 35"W x 32"H - Seat depth: 22", Fully reclined: 43" inches wide,Beautiful tufted design with nailhead trim combines a sophisticated yet traditional style unlike any other,Working phone number must be provided with all order.
+                                                </p>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        @*Related Products*@
+
+                        <div class="related-products-wrapper">
+                            <h2 class="related-products-title">Related Products</h2>
+                            <div class="related-products-carousel">
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="~/img/products/galaxys10.jpg" alt="">
+                                        <div class="product-hover">
+                                            <a href="~/ShoppingCart/AddCart" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <a href="~/CategoriesTab/IndexSamsungGalaxy" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        </div>
+                                    </div>
+
+                                    <h2><a href="~/Views/CategoriesTab/IndexSamsungGalaxy.cshtml">Samsung Galaxy S10</a></h2>
+
+                                    <div class="product-carousel-price">
+                                        <ins>₹ 50000</ins> <del>₹ 66900</del>
+                                    </div>
+                                </div>
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="~/img/products/mia2.jpg" alt="">
+                                        <div class="product-hover">
+                                            <a href="~/ShoppingCart/AddCart" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <a href="~/CategoriesTab/IndexMiA2" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        </div>
+                                    </div>
+
+                                    <h2><a href="~/CategoriesTab/IndexMiA2">Mi A2</a></h2>
+                                    <div class="product-carousel-price">
+                                        <ins>₹ 11000</ins> <del>₹ 15999</del>
+                                    </div>
+                                </div>
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="~/img/products/halfgf.jpg" alt="">
+                                        <div class="product-hover">
+                                            <a href="~/ShoppingCart/AddCart" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <a href="~/CategoriesTab/IndexHalfgf" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        </div>
+                                    </div>
+
+                                    <h2><a href="~/CategoriesTab/IndexHalfgf">Half GirlFriend</a></h2>
+
+                                    <div class="product-carousel-price">
+                                        <ins>₹ 30</ins> <del>₹ 50</del>
+                                    </div>
+                                </div>
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="~/img/products/piccasso.jpg" alt="">
+                                        <div class="product-hover">
+                                            <a href="~/ShoppingCart/AddCart" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <a href="~/CategoriesTab/IndexPiccasso" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        </div>
+                                    </div>
+
+                                    <h2><a href="~/CategoriesTab/IndexPiccasso">Picasso</a></h2>
+
+                                    <div class="product-carousel-price">
+                                        <ins>₹ 50000</ins> <del>₹ 100000</del>
+                                    </div>
+                                </div>
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="~/img/products/harrypotter.jpg" alt="">
+                                        <div class="product-hover">
+                                            <a href="~/ShoppingCart/AddCart" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <a href="~/CategoriesTab/IndexHarryPotter" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        </div>
+                                    </div>
+
+                                    <h2><a href="~/CategoriesTab/IndexHarryPotter">Harry Potter Set</a></h2>
+
+                                    
+
+                                    <div class="product-carousel-price">
+                                        <ins>₹ 11000</ins> <del>₹ 15999</del>
+                                    </div>
+                                </div>
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="~/img/products/Converse.jpg" alt="">
+                                        <div class="product-hover">
+                                            <a href="~/ShoppingCart/AddCart" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <a href="~/CategoriesTab/IndexConverse" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        </div>
+                                    </div>
+
+                                    <h2><a href="~/CategoriesTab/IndexConverse">Converse Unisex Sneakers</a></h2>
+
+                                    <div class="product-carousel-price">
+                                        <ins>₹ 30000</ins> <del> ₹ 40000</del>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

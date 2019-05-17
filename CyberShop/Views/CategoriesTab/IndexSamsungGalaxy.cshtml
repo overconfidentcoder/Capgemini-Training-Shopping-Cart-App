@@ -1,0 +1,207 @@
+﻿@model IEnumerable<CyberShop.Models.Products_174772>
+
+@{
+    ViewBag.Title = "IndexSamsungGalaxy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ 
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>Product</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Search Products*@
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="single-sidebar">
+                    <h2 class="sidebar-title">Search Products</h2>
+                    <form action="">
+                        <input type="text" placeholder="Search products...">
+                        <input type="submit" value="Search">
+                    </form>
+                </div>
+               
+
+                @*Path of the page*@
+
+                <div class="col-md-8">
+                    <div class="product-content-right">
+                        <div class="product-breadcroumb">
+                            <a href="">Home</a>
+                            <a href="~/CategoriesTab/Index">Categories</a>
+                            <a href="~/CategoriesTab/IndexElectronics">Electronics</a>
+                            <a href="~/CategoriesTab/IndexSamsungGalaxy">Samsung Galaxy S10</a>
+
+                        </div>
+
+                        @*Main image*@
+
+                        <div class="row" >
+                            <div class="col-sm-6">
+                                <div class="product-images">
+                                    <div class="product-main-img">
+                                        <img src="~/img/products/galaxys10.jpg" alt="" >
+                                    </div>
+
+                                    @*Thumbnails*@
+
+                                    <div class="product-gallery">
+                                        <img src="~/img/products/thumbnails/samsungthumbnail1.jpg" alt="">
+                                        <img src="~/img/products/thumbnails/samsungthumbnail2.jpg" alt="">
+                                        <img src="~/img/products/thumbnails/samsungthumbnail3.jpg" alt="">
+                                        <img src="~/img/products/thumbnails/samsungthumbnail4.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            @*The Product*@
+
+                            <div class="col-sm-6">
+                                <div class="product-inner">
+                                    <h2 class="product-name">Samsung Galaxy S10</h2>
+                                    <div class="product-inner-price">
+                                        <ins>₹ 50000</ins> <del>₹ 66900</del>
+                                    </div>
+
+                                    <form action="" class="cart">
+                                        <div class="quantity">
+                                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
+                                        </div>
+                                        <button class="add_to_cart_button" type="submit">Add to cart</button>
+                                    </form>
+
+                                    <div role="tabpanel">
+                                        <ul class="product-tab" role="tablist">
+                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
+
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane fade in active" id="home">
+                                                <h2>Product Description</h2>
+                                                <p>The result of 10 years of pioneering mobile firsts, Galaxy S10 series introduce the next generation of mobile innovation. Completely redesigned to remove interruptions from your view. No notch, no distractions. Precise laser cutting, on-screen security, and a Dynamic AMOLED that's easy on the eyes make the Infinity-O Display the most innovative Galaxy screen yet. Use the Ultra Wide Camera to take stunning, cinematic photos with a 123 degree field of vision. Wireless Power Share gives you the ability to share your power with other devices and Fast Wireless Charging 2.0 gets your phone back to 100 percent, faster.</p>
+
+                                                <p>Android Pie v9.0 operating system with 2.7GHz + 2.3GHz + 1.9GHz Exynos 9820 octa core processor.Memory, Storage and SIM: 8GB RAM | 128GB internal memory expandable up to 512GB | Dual SIM (nano+nano) dual stand by (4G+4G).3400mAH lithium-ion battery; Simply touch the glass to unlock. We've moved security from the back of the phone to the front, fusing the Ultrasonic Fingerprint directly into the screen.</p>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        @*Related Products*@
+
+                        <div class="related-products-wrapper">
+                            <h2 class="related-products-title">Related Products</h2>
+                            <div class="related-products-carousel">
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="~/img/products/mia2.jpg" alt="">
+                                        <div class="product-hover">
+                                            <a href="~/ShoppingCart/AddCart" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <a href="~/CategoriesTab/IndexMiA2" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        </div>
+                                    </div>
+
+                                    <h2><a href="~/CategoriesTab/IndexMiA2">Mi A2</a></h2>
+
+                                    <div class="product-carousel-price">
+                                        <ins>₹ 11000</ins> <del>₹ 15999</del>
+                                    </div>
+                                </div>
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="~/img/products/Converse.jpg" alt="">
+                                        <div class="product-hover">
+                                            <a href="~/ShoppingCart/AddCart" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <a href="~/CategoriesTab/IndexConverse" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        </div>
+                                    </div>
+
+                                    <h2><a href="~/CategoriesTab/IndexConverse">Converse Unisex Sneakers</a></h2>
+                                    <div class="product-carousel-price">
+                                        <ins>₹ 3000</ins> <del>₹ 4549</del>
+                                    </div>
+                                </div>
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="~/img/products/halfgf.jpg" alt="">
+                                        <div class="product-hover">
+                                            <a href="~/ShoppingCart/AddCart" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <a href="~/CategoriesTab/IndexHalfgf" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        </div>
+                                    </div>
+
+                                    <h2><a href="~/CategoriesTab/IndexHalfgf">Half GirlFriend</a></h2>
+
+                                    <div class="product-carousel-price">
+                                        <ins>₹ 30</ins> <del>₹ 50</del>
+                                    </div>
+                                </div>
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="~/img/products/piccasso.jpg" alt="">
+                                        <div class="product-hover">
+                                            <a href="~/ShoppingCart/AddCart" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <a href="~/CategoriesTab/IndexPiccasso" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        </div>
+                                    </div>
+
+                                    <h2><a href="~/CategoriesTab/IndexPiccasso">Picasso</a></h2>
+
+                                    <div class="product-carousel-price">
+                                        <ins>₹ 50000</ins> <del>₹ 100000</del>
+                                    </div>
+                                </div>
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="~/img/products/harrypotter.jpg" alt="">
+                                        <div class="product-hover">
+                                            <a href="~/ShoppingCart/AddCart" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <a href="~/CategoriesTab/IndexHarryPotter" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        </div>
+                                    </div>
+
+                                    <h2><a href="~/CategoriesTab/IndexHarryPotter">Harry Potter Set</a></h2>
+
+                                    <div class="product-carousel-price">
+                                        <ins>₹ 3000</ins> <del> ₹ 7000</del>
+                                    </div>
+                                </div>
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="~/img/products/sofaset.jpg" alt="">
+                                        <div class="product-hover">
+                                            <a href="~/ShoppingCart/AddCart" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                            <a href="~/CategoriesTab/IndexSofaSet" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        </div>
+                                    </div>
+
+                                    <h2><a href="~/CategoriesTab/IndexSofaSet">Convertible Sofa Set</a></h2>
+
+                                    <div class="product-carousel-price">
+                                        <ins>₹ 30000</ins> <del> ₹ 40000</del>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
